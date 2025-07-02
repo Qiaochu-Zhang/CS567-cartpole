@@ -1,11 +1,4 @@
-# cartpole_dqn_project_v2.py – 改进版 DQN（增强准确率 + 动态步数叠加）
-# -----------------------------------------------------------------------------
-# 改进内容：
-#   1. 强化网络结构：增加隐藏层
-#   2. 使用 Huber Loss 替代 MSE
-#   3. 软更新目标网络（Soft Target Update）
-#   4. reward clipping
-# -----------------------------------------------------------------------------
+
 import os, csv, random, imageio
 from collections import deque
 from typing import List
@@ -20,12 +13,12 @@ import gymnasium as gym
 from PIL import Image, ImageDraw, ImageFont
 
 SEED                 = 42
-GAMMA                = 0.99
+GAMMA                = 0.95
 LR                   = 5e-4
 BATCH_SIZE           = 64
 BUFFER_SIZE          = 100_000
 EPS_START, EPS_END   = 1.0, 0.01
-EPS_DECAY            = 0.99
+EPS_DECAY            = 0.97
 MAX_EPISODES         = 2000
 EARLY_STOP_REWARD    = 195
 EARLY_STOP_WINDOW    = 100
